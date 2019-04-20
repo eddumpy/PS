@@ -9,6 +9,9 @@ class Position(models.Model):
     created = models.DateTimeField()
     ship = models.ForeignKey('ship.Ship', on_delete=models.CASCADE, related_name='positions')
 
+    def __unicode__(self):
+        return "{}, {}".format(self.latitude, self.longitude)
+
     @property
     def longitude(self):
         return self.location.x if self.location else None
