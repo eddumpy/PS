@@ -8,5 +8,5 @@ class Ship(models.Model):
     imo_number = models.PositiveIntegerField(primary_key=True)
     name = models.TextField(max_length=255)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
