@@ -8,5 +8,6 @@ router.register('ships', views.ShipViewSet, base_name='ships')
 
 urlpatterns = [
     url('api/', include(router.urls)),
-    url('api/positions/(?P<pk>[\d]+)/', views.ShipPositionsView.as_view(), name='ship-positions')
+    url('api/positions/(?P<pk>[\d]+)/', views.ShipPositionsView.as_view(), name='ship-positions'),
+    url('', views.index, name='index')
 ]

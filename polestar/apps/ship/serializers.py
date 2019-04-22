@@ -6,4 +6,4 @@ from .models import Ship
 class ShipSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ship
-        fields = ('imo_number', 'name',)
+        fields = ('imo', 'name',)

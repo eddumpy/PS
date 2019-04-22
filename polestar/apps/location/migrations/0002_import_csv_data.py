@@ -14,7 +14,7 @@ def fill_out_csv_data(apps, schema_editor):
     with open('data/positions.csv', 'r') as csvFile:
         reader = csv.reader(csvFile)
         for row in reader:
-            ship = Ship.objects.get(imo_number=row[0])
+            ship = Ship.objects.get(imo=row[0])
             point = Point(x=float(row[3]), y=float(row[2]))
             date = datetime.datetime.strptime(row[1][:-3], '%Y-%m-%d %H:%M:%S')
             ship.positions.create(

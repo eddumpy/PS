@@ -13,7 +13,7 @@ def create_ships(apps, schema_editor):
     ]
 
     for ship in ships:
-        Ship.objects.create(imo_number=ship[0], name=ship[1])
+        Ship.objects.create(imo=ship[0], name=ship[1])
 
 
 class Migration(migrations.Migration):
