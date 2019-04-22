@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Ship',
             fields=[
-                ('imo_number', models.PositiveIntegerField(primary_key=True, serialize=False)),
+                ('imo', models.PositiveIntegerField(primary_key=True, serialize=False)),
                 ('name', models.TextField(max_length=255)),
             ],
         ),
