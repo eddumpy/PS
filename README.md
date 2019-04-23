@@ -20,8 +20,7 @@ Running the code:
 11. The API should now be accessible at `http://localhost:8000`.
 10. You now have access to the endpoints!
 
-`localhost:8000/api/ships`
-`localhost:8000/api/positions/<ship_imo>/`
-
-for index.html, it is located at root:
+- `localhost:8000/api/ships`
+- `localhost:8000/api/positions/<ship_imo>/`
+- for running `index.html`, it is located at root:
 `localhost:8000/`
