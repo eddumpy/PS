@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 import csv
 import datetime
 from django.db import migrations
+from django.utils import timezone
 from django.contrib.gis.geos import Point
 
 
@@ -16,7 +17,8 @@ def fill_out_csv_data(apps, schema_editor):
         for row in reader:
             ship = Ship.objects.get(imo=row[0])
             point = Point(x=float(row[3]), y=float(row[2]))
-            date = datetime.datetime.strptime(row[1][:-3], '%Y-%m-%d %H:%M:%S')
+            date = timezone.make_aware(datetime.datetime.strptime(row[1][:-3], '%Y-%m-%d %H:%M:%S'),
+                                       timezone.get_current_timezone())
             ship.positions.create(
                 location=point,
                 created=date

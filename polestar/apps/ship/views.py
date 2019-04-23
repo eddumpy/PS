@@ -24,7 +24,7 @@ class ShipPositionsView(generics.RetrieveAPIView):
 
     def get(self, request, *args, **kwargs):
         ship = self.get_object()
-        serializer = self.get_serializer(data=ship.positions.all(), many=True)
+        serializer = self.get_serializer(data=ship.positions.order_by('-created'), many=True)
         serializer.is_valid()
         return Response(serializer.data)
 

@@ -11,14 +11,15 @@ Setting up:
     - ``\c polestar;``
     - ``CREATE EXTENSION postgis;``
 7. Now the database is ready to use, goto the `settings.py` in the settings folder of the code and then edit the following fields to the names of your user and database:
- - `DATABASE_USER`
- - `DATABASE_PASSWORD`
+ - `DATABASE_USER = <user>`
+ - `DATABASE_PASSWORD = <user_password>`
  
 Running the code:
 8. Create virtualenv and run `pip install -r requirements.pip`.
-9. Run the server ./manage.py runserver
+9. Run the migrations: `./manage.py migrate`
+10. Run the server ./manage.py runserver
 11. The API should now be accessible at `http://localhost:8000`.
-10. You now have access to the endpoints!
+12. You now have access to the endpoints!
 
 - `localhost:8000/api/ships`
 - `localhost:8000/api/positions/<ship_imo>/`

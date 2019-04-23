@@ -48,7 +48,7 @@
           for (i = 0; i < ships_data.length; i++) {
             (function (currentShip) {
               $.ajax({
-                url: 'http://localhost:8000/api/positions/' + currentShip.imo,
+                url: 'http://localhost:8000/api/positions/' + currentShip.imo + '/',
                 dataType: 'json'
               }).done(function(positions_data) {
                 // Add current position marker (1st position in the list).
