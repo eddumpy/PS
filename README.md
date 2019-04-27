@@ -15,11 +15,11 @@ Setting up:
  - `DATABASE_PASSWORD = <user_password>`
  
 Running the code:
-8. Create virtualenv and run `pip install -r requirements.pip`.
-9. Run the migrations: `./manage.py migrate`
-10. Run the server ./manage.py runserver
-11. The API should now be accessible at `http://localhost:8000`.
-12. You now have access to the endpoints!
+1. Create virtualenv and run `pip install -r requirements.pip`
+2. Run the migrations: `./manage.py migrate`
+3. Run the server `./manage.py runserver`
+4. The API should now be accessible at `http://localhost:8000`
+5. You now have access to the endpoints!
 
 - `localhost:8000/api/ships`
 - `localhost:8000/api/positions/<ship_imo>/`
