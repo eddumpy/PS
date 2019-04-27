@@ -16,6 +16,11 @@ def create_ships(apps, schema_editor):
         Ship.objects.create(imo=ship[0], name=ship[1])
 
 
+def delete_ships(apps, schema_editor):
+    Ship = apps.get_model('ship', 'Ship')
+    Ship.objects.all().delete()
+
+
 class Migration(migrations.Migration):
 
     dependencies = [
@@ -23,5 +28,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunPython(create_ships)
+        migrations.RunPython(create_ships, reverse_code=delete_ships)
     ]
